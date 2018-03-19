@@ -1,0 +1,381 @@
+<!-- <!DOCTYPE html> -->
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>TodoList</title>
+		<meta name="description" content="Page Preloading Effect: Re-creating the effect seen on fontface.ninja" />
+		<meta name="keywords" content="page loading, effect, initial, logo, sliding, web design, css animation, transform" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" href="css/dropzone.css" />
+		<link rel="stylesheet" href="css/bootstrap.min.css" >
+		<!-- 1 -->
+  		<link rel="stylesheet" href="css/style.css">
+		<!-- 2 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+    <link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/min/dropzone.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/effect1.css" />
+		<script src="js/modernizr.custom.js"></script>
+    <script>
+      var Dropzone = require("dropzone");
+
+      $("div#my-awesome-dropzone").dropzone({ url: "upload.php" });
+
+    </script>
+		<!-- <style>
+body {
+  margin: 0;
+  min-width: 250px;
+
+  background: #e994b6;
+}
+.container {
+  margin: 50px auto;
+  width: 380px;
+}
+
+.todo {
+  position: relative;
+  width: 260px;
+  padding: 12px 0;
+  background: white;
+  border: 1px solid;
+  border-color: #dfdcdc #d9d6d6 #ccc;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+#myInput {
+  background-image: url('css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block
+}
+
+li a:hover:not(.header) {
+  background-color: #eee;
+
+/* Include the padding and border in an element's total width and height */
+* {
+  box-sizing: border-box;
+}
+#myULtodo {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+/* Remove margins and padding from the list */
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the list items */
+ul li {
+  cursor: pointer;
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  list-style-type: none;
+  background: #eee;
+  font-size: 18px;
+  transition: 0.2s;
+  
+  /* make the list items unselectable */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Set all odd list items to a different color (zebra-stripes) */
+ul li:nth-child(odd) {
+  background: #f9f9f9;
+}
+
+/* Darker background-color on hover */
+ul li:hover {
+  background: #ddd;
+}
+
+/* When clicked on, add a background color and strike out text */
+ul li.checked {
+  background: #888;
+  color: #fff;
+  text-decoration: line-through;
+}
+
+/* Add a "checked" mark when clicked on */
+ul li.checked::before {
+  content: '';
+  position: absolute;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 10px;
+  left: 16px;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 7px;
+}
+
+/* Style the close button */
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px 16px 12px 16px;
+}
+
+.close:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+.card {
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(63, 63, 68, 0.1);
+  background-color: #FFFFFF;
+  margin-bottom: 30px; 
+  padding:5px;
+}
+
+/* Style the header */
+.header {
+  background-color: #f44336;
+  padding: 30px 40px;
+  color: white;
+  text-align: center;
+}
+
+/* Clear floats after the header */
+.header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the input */
+input {
+  border: none;
+  width: 75%;
+  padding: 5px;
+  float: left;
+  font-size: 16px;
+}
+
+/* Style the "Add" button */
+.addBtn {
+  padding: 5px;
+  width: 25%;
+  background: #fab9b9;
+  color: #db4f4f;
+  float: left;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.addBtn:hover {
+  background-color: #db4f4f;
+}
+
+.container{
+			width: 50%;
+			margin: auto;
+		}
+		#preview img{
+			margin: 8px;
+			width: 150px;
+			height: 150px;
+		}
+</style>  -->
+	</head>
+	<body class="demo-1">
+		<div id="ip-container" class="ip-container">
+			<!-- initial header -->
+			<header class="ip-header">				
+				<div class="ip-loader">
+					<svg class="ip-inner" width="100px" height="100px" viewBox="0 0 80 80">
+						<path class="ip-loader-circlebg" d="M40,10C57.351,10,71,23.649,71,40.5S57.351,71,40.5,71 S10,57.351,10,40.5S23.649,10,40.5,10z"/>
+						<path id="ip-loader-circle" class="ip-loader-circle" d="M40,10C57.351,10,71,23.649,71,40.5S57.351,71,40.5,71 S10,57.351,10,40.5S23.649,10,40.5,10z"/>
+					</svg>
+				</div>
+			</header>
+			
+			<!-- main content -->
+      <div class="container-fluid">
+        <h1 align="center" style="padding: 10px">My To Do</h1>
+        <!-- search -->
+				<div class="col-md-12">  
+          <div class="form-group">  
+              <input class="form-control-static" type="text" id="cari" placeholder="cari . . ">
+              <button type="button" class="btn btn-primary btn-sm" onclick="cari()">cari</button>
+          </div>                                                
+        </div>  
+        <!-- get task -->  
+        <div class="col-md-12"> 
+          <form action="upload.php" class="dropzone" id="my-awesome-dropzone">
+            <div class="fallback">
+              <input type="file" name="file" />
+            </div>
+          </form>
+        </div>      
+        <form class="form-inline">
+        <div class="col-md-12">
+          <div class="form-group">  
+            <input class="form-control-static" type="text" id="mylist" placeholder="Todo list . . ">
+              <select class="form-control" id="mycat">
+                <option>today</option>
+                <option>kantor</option>
+                <option>rumah</option>
+              </select>
+
+            <button type="button" data-loading-text="Loading..." class="btn btn-primary btn-sm" onclick="add_row()" autocomplete="off">Add</button>
+            </div>
+        </div>
+      </form>
+
+        <div class="col-md-12">
+          <div class="table-responsive">
+          <table class="table table-bordered table-striped table-hover">
+            <thead align="center">
+              <th><INPUT type="checkbox" name="chk[]"/>Cek </th>
+              <th>To Do List  </th>
+              <th>Kategori  </th>
+              <th>Aksi    </th>
+            </thead>
+
+            <tbody id="table">
+            </tbody>
+            </table>
+          </div>
+        </div>        	
+             
+      <!-- end -->       
+    </div>                 
+  </div>
+                
+<!-- /container -->
+		<script src="js/classie.js"></script>
+		<script src="js/pathLoader.js"></script>
+		<script src="js/main.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript">
+      // --------start
+      function cari(argument) {
+        var cari = document.getElementById('cari').value;
+        var table = document.getElementById('table');
+        console.log(table)
+        var tr = table.getElementsByTagName('tr');
+        for (var i = tr.length - 1; i >= 0; i--) {
+          var td = tr[i].getElementsByTagName('td');
+          var found = false;
+          for(var j = td.length - 1; j >= 0; j--){
+            if (j!=2 && found==false){
+              var string=td[j].innerHTML;
+              var carinya=string.indexOf(cari);
+              if (carinya!==-1){
+                found=true;
+                tr[i].style.display="";
+              } else{
+                found=false;
+                tr[i].style.display="none";
+              }
+            }
+          }
+        }
+      }
+
+      function add_row(){
+        var table=document.getElementById('table');
+        var htmlTable = table.innerHTML;
+        var tugas = document.getElementById('mylist').value;
+        var kategori = document.getElementById('mycat').value;
+
+
+        table.innerHTML=htmlTable+"<tr><td><input type='checkbox' id='myCheck'  onclick='strike(this)'></td><td>"+tugas+"</td><td>"+kategori+"</td><td align='center'><button onclick='edit_row(this)' class='btn btn-primary btn-sm'>edit</button><button onclick='hapus_row(this)' class='btn btn-danger btn-sm'>hapus</button></td></tr>";
+      }
+
+      function strike(elm) {
+        if(elm.checked) {
+            elm.parentNode.parentNode.className = "strikeout";
+        } else {
+            elm.parentNode.parentNode.className = "";
+        }
+      }
+
+      function hapus_row(ini){
+        ini.parentElement.parentElement.remove();
+      }
+
+      function edit_row(ini){
+        var td=(ini.parentElement.parentElement.getElementsByTagName('td'));
+        for (var i = td.length - 1; i>=0; i--){
+          if (i==1){
+            var tugas = td[i].innerHTML;
+            td[i].innerHTML="<input type='text' value='"+tugas+"'>";
+          } if (i==3) {
+            td[i].innerHTML="<button onclick='simpan_edit(this)' class='btn btn-primary btn-sm'>simpan</button>"
+          }
+        }
+      }
+
+      function simpan_edit(ini){
+        var td=ini.parentElement.parentElement.getElementsByTagName('td');
+        for (var i =  td.length - 1; i >= 0; i--) {
+          if (i==1) {
+            var tugas=td[i].getElementsByTagName('td')[0].value;
+            td[i].innerHTML=tugas;
+          }
+          if (i==3) {
+            td[i].innerHTML="<button onclick='edit_row(this)' class='btn btn-primary btn-sm'>edit</button><button onclick='hapus_row(this)' class='btn btn-danger btn-sm'>hapus</button>";
+          }
+        }
+      }
+
+      Dropzone.options.Ngide = {
+        addRemoveLinks : true,
+        maxFilesize : 1,
+        success: function(file, data){
+            console.log(file)
+            console.log(data)
+            var preview = document.getElementById('preview');
+            var img = "<img src='" + data.file + "'>";
+            
+            preview.insertAdjacentHTML( 'beforeend', img );
+        }
+    }
+      
+    </script>
+	</body>
+</html>
